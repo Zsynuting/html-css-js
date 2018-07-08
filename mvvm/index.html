@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="mvvm-app">
+    <input type="text" v-model="someStr">
+    <select v-model="selectVal">
+      <option value="1">value1</option>
+      <option value="2">value2</option>
+      <option value="3">value3</option>
+    </select>
+    <span>{{message}}</span>
+  </div>
+
+  <script src="./observer.js"></script>
+  <script src="./watcher.js"></script>
+  <script src="./compile.js"></script>
+  <script src="./mvvm.js"></script>
+  <script>
+    var vm = new MVVM({
+      el: '#mvvm-app',
+      data: {
+        someStr: 'hello ',
+        selectVal: '',
+      },
+      computed: {
+        message() {
+          return this.someStr + this.selectVal;
+        }
+      },
+      watch: {
+        selectVal() {
+          console.log(this.selectVal);
+        },
+        message() {
+          console.log(this.message);
+        }
+      },
+    });
+  </script>
+
+</body>
+
+</html>
