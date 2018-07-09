@@ -9,7 +9,7 @@ String.prototype.format = function () {
 function Node(point, parent, isLeaf) {
   // indicate if the Node is a leaf
   // if true, the value of node is definite, using `point` to calculate
-  // if false, will record all s calculated by its 2 children depending on calculator that is <= 24 into (Map), hence using values of ``
+  // if false, will record all results calculated by its 2 children depending on calculator that is <= 24 into (Map), hence using values of ``
   this.isLeaf = isLeaf;
   // the point of a poker card
   this.point = point;
